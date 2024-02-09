@@ -1,0 +1,8 @@
+bs4
+requests
+schedule
+pyTelegramBotAPI
+openai
+python-dotenv
+PyMuPDF
+
