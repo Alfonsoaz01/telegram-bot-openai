@@ -1,6 +1,6 @@
 # telegram-bot-openai
 
-This project aims to create a Telegram bot using the OpenAI API.
+This project aims to create a Telegram bot that uses the OpenAI API to summarize the content you send him.
 
 ## Configuration
 
@@ -11,7 +11,6 @@ AZURE_OPENAI_API_KEY=
 API_TOKEN_TG=
 OPENAI_MODEL=
 OPENAI_ENDPOINT=
-ALLOWED_ID_USER=
 ```
 
 After setting the environment variables, the bot is ready to be used.
@@ -32,6 +31,10 @@ There are two alternatives for installation:
      ```bash
      docker build -t telegram-bot-openai .
      ```
+   - And run the container using the following command:
+     ```bash
+     docker run -d --env-file .env telegram-bot-openai
+     ```
    - Alternatively, you can use the docker-compose file:
      ```bash
      docker-compose up
@@ -47,3 +50,12 @@ There are two alternatives for installation:
      ```bash
      python bot.py
      ```
+
+## Time spent on the project
+
+I have built this project in an hour as a challenge to myself. The bot is not perfect, but it works. Feel free to contribute to the project. I would love to see your contributions.
+
+## Support
+
+Do you like this content? You can support me by buying me a coffee:
+https://www.buymeacoffee.com/fonxoaz

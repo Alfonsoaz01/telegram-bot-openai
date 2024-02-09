@@ -8,7 +8,7 @@ import logging
 
 
 
-# Cargar las variables de entorno desde el archivo .env
+# load env variables
 load_dotenv()
 
 logging.basicConfig(filename='app.log', level=logging.DEBUG)
@@ -17,7 +17,8 @@ logging.basicConfig(filename='app.log', level=logging.DEBUG)
 
 bot = telebot.TeleBot(os.environ['API_TOKEN_TG'])
 
-allowed_user_ids = [os.environ['ALLOWED_ID_USER']]  # ID users allowed
+
+allowed_user_ids = [1235467]  # ID users allowed as a number
 
 
 
@@ -51,7 +52,7 @@ def create_response(text):
 
 
 
-@bot.message_handler(commands=['start', 'START'])
+@bot.message_handler(commands=['start', 'START', 'Start'])
 def send_welcome(message):
     if is_user_allowed(message.from_user.id):
         bot.reply_to(message, "Initialized bot, ready to summarize texts. Please send me a text to summarize.")
@@ -59,6 +60,11 @@ def send_welcome(message):
         bot.reply_to(message, "User not authorized to use the bot.")
 
         
+@bot.message_handler(commands=['Help', 'HELP', 'help'])
+def send_welcome(message):
+
+    bot.reply_to(message, "Hello! I am a bot that is supposed to help you summarize texts. Please send me a text to summarize.")
+
 
 
 
@@ -69,9 +75,9 @@ def echo_all(message):
     bot.send_chat_action(chat_id=message.chat.id, action="typing")
     try:
         response = create_response(message.text)
-        bot.reply_to(message, "Resuming the content: \n\n" + response)
+        bot.reply_to(message, "Summarizing the content: \n\n" + response)
     except Exception as e:
-        bot.reply_to(message, "Error")
+        bot.reply_to(message, "Error Summarizing")
     
 
 
