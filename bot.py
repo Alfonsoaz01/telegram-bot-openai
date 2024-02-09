@@ -38,7 +38,7 @@ def create_response(text):
 
         response = client.chat.completions.create(
             messages=[
-                {"role": "system", "content": "You are an assistant that helps summarize the content of long texts, so that users can read it in a faster and easier way. You can translate texts to Spanish if they are not in Spanish. You can summarize the texts in a way that they are shorter and easier to read."},
+                {"role": "system", "content": "You are an assistant that helps summarize the content of long texts, so that users can read it in a faster and easier way. You can summarize the texts in a way that they are shorter and easier to read."},
                 {"role": "user", "content": f"Can you please summarize the content of the following text? I would need it to be summarized in English. If the original text is not in English, please translate it as best as possible and summarize it in a way that it retains the key points of the text and always has less summarized content than the original. Text content: {text}"}
             ],
             model=os.environ['OPENAI_MODEL'],
