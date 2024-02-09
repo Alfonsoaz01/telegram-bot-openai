@@ -20,6 +20,7 @@ After setting the environment variables, the bot is ready to be used.
 To obtain the telegram bot token, you need to create a new bot using the BotFather on Telegram. The OpenAI API key can be obtained by creating an account on the OpenAI website.
 
 Check on the following link to obtain your id: https://www.alphr.com/telegram-find-user-id/
+You need to insert the id in the `bot.py` file in the allowed_user_ids list.
 
 ## Installation
 
